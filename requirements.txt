@@ -1,0 +1,7 @@
+torch==2.12.1
+nvidia-cutlass-dsl==4.7.1
+cute-triadic-gdn @ git+https://github.com/OliverSieberling/cute-triadic-gdn
+datasets
+transformers
+zstandard
+wandb

@@ -1,0 +1,19 @@
+# 1.3B: 24 x 2048, 16 heads x 128, 1,048,576 tokens/step x 62,000 steps (65B tokens = 50 tokens/param)
+# Triadic GDN, second-key dimension E = 8 (8x the state of GDN)
+mixer = 'gdn'
+second_key_dim = 8
+n_embd = 2048
+ffn_intermediate_size = 5504
+n_head = 16
+max_iters = 62000
+lr_decay_iters = 62000
+batch_size = 2                    # per GPU
+gradient_accumulation_steps = 128 # global: 4 nodes x 8 GPUs = four micro-batches per GPU
+megatron_train_path = 'data/fineweb-edu/train'  # from data/prepare_fineweb.py
+megatron_val_path = 'data/fineweb-edu/val'
+n_layer = 24
+block_size = 4096
+learning_rate = 3e-4              # 1000 warmup steps, cosine decay to 3e-5
+warmup_iters = 1000
+wandb_run_name = 'triadic-gdn-e8-1.3b'
+out_dir = 'out/triadic-gdn-e8-1.3b'

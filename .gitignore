@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pt
+*.bin
+*.idx
+.venv/
+wandb/
+out/
+data/*/
